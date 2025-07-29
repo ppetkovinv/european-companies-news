@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Public Companies News Aggregation</title>
+    <meta name="description" content="Comprehensive news, analysis, and insights for public companies across Europe. Covering Germany, France, Italy, Netherlands, and Spain.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        main {
+            min-height: 100vh;
+            padding: 3rem 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: #4b5563;
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+        }
+
+        .country-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .country-button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .country-button:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            width: 100%;
+            margin: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .section-content {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            text-align: center;
+        }
+
+        .flag {
+            font-size: 1.2em;
+            margin-right: 0.5rem;
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #111827;
+                color: #f9fafb;
+            }
+
+            .hero-title {
+                color: white;
+            }
+
+            .hero-description {
+                color: #d1d5db;
+            }
+
+            .section-title {
+                color: #f3f4f6;
+            }
+
+            .section-content {
+                background-color: #1f2937;
+                color: #9ca3af;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .country-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .country-button {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+
+            .container {
+                padding: 0 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1 class="hero-title">
+                    European Public Companies News Aggregation
+                </h1>
+                <p class="hero-description">
+                    Real-time news, market data, company insights, and analytics for investors, analysts, and professionals. Explore the latest updates from Germany, France, Italy, Netherlands, and Spain.
+                </p>
+                
+                <div class="country-buttons">
+                    <a href="#germany" class="country-button">
+                        <span class="flag">🇩🇪</span>Germany Market
+                    </a>
+                    <a href="#france" class="country-button">
+                        <span class="flag">🇫🇷</span>France Market
+                    </a>
+                    <a href="#italy" class="country-button">
+                        <span class="flag">🇮🇹</span>Italy Market
+                    </a>
+                    <a href="#netherlands" class="country-button">
+                        <span class="flag">🇳🇱</span>Netherlands Market
+                    </a>
+                    <a href="#spain" class="country-button">
+                        <span class="flag">🇪🇸</span>Spain Market
+                    </a>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Featured Stories & Breaking News</h2>
+                <div class="section-content">
+                    <span>Live market headlines and featured pan-European news will appear here.</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Market Data</h2>
+                <div class="section-content">
+                    <span>Market indices and stock performance widgets coming soon.</span>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Simple script to handle country button clicks
+        document.querySelectorAll('.country-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const country = this.textContent.trim().split(' ')[0];
+                alert(`${country} market data coming soon! This will redirect to detailed ${country.toLowerCase()} company news and market information.`);
+            });
+        });
+
+        // Add smooth scrolling for any anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

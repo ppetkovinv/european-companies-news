@@ -1,54 +1,43 @@
-import Head from "next/head";
+# European Public Companies News Aggregation
 
-export default function Home() {
-  return (
-    <>
-      <Head>
-        <title>European Public Companies News Aggregation</title>
-        <meta name="description" content="Comprehensive news, analysis, and insights for public companies across Europe. Covering Germany, France, Italy, Netherlands, and Spain." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <section className="container mx-auto px-4 py-12 flex flex-col gap-6 items-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-center text-gray-900 dark:text-white">
-            European Public Companies News Aggregation
-          </h1>
-          <p className="max-w-2xl text-center text-lg text-gray-700 dark:text-gray-300">
-            Real-time news, market data, company insights, and analytics for investors, analysts, and professionals. Explore the latest updates from Germany, France, Italy, Netherlands, and Spain.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {[
-              { country: "Germany", code: "de" },
-              { country: "France", code: "fr" },
-              { country: "Italy", code: "it" },
-              { country: "Netherlands", code: "nl" },
-              { country: "Spain", code: "es" },
-            ].map(({ country, code }) => (
-              <a
-                key={code}
-                href={`/markets/${code}`}
-                className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow transition"
-              >
-                {country} Market
-              </a>
-            ))}
-          </div>
-          <section className="w-full mt-12">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Featured Stories & Breaking News</h2>
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 min-h-[120px] flex items-center justify-center text-gray-500">
-              {/* Placeholder: Featured stories/news ticker to be implemented */}
-              <span>Live market headlines and featured pan-European news will appear here.</span>
-            </div>
-          </section>
-          <section className="w-full mt-12">
-            <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Market Data</h2>
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 min-h-[100px] flex items-center justify-center text-gray-500">
-              {/* Placeholder: Real-time market data widgets to be implemented */}
-              <span>Market indices and stock performance widgets coming soon.</span>
-            </div>
-          </section>
-        </section>
-      </main>
-    </>
-  );
-}
+A comprehensive news and market data platform for public companies across Europe, covering Germany, France, Italy, Netherlands, and Spain.
+
+## Overview
+
+This project provides real-time news, market data, company insights, and analytics for investors, analysts, and professionals interested in European markets.
+
+## Features
+
+- **Multi-Country Coverage**: Access news and data from major European markets
+- **Real-Time Updates**: Live market headlines and breaking news
+- **Market Data**: Stock performance and market indices
+- **User-Friendly Interface**: Clean, responsive design for desktop and mobile
+
+## Supported Markets
+
+- 🇩🇪 **Germany** - DAX companies and German market news
+- 🇫🇷 **France** - CAC 40 companies and French market updates  
+- 🇮🇹 **Italy** - FTSE MIB companies and Italian market data
+- 🇳🇱 **Netherlands** - AEX companies and Dutch market insights
+- 🇪🇸 **Spain** - IBEX 35 companies and Spanish market news
+
+## Getting Started
+
+Visit the [European Companies News website](https://ppetkovinv.github.io/european-companies-news/) to access:
+
+- Latest market headlines
+- Featured stories and breaking news
+- Market data and performance metrics
+- Country-specific company information
+
+## Project Structure
+
+This is a static website hosted on GitHub Pages, designed to provide easy access to European market information and news aggregation.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests to improve the platform.
+
+## License
+
+This project is open source and available under the MIT License.
