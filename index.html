@@ -391,6 +391,170 @@
             .section-content:hover {
                 background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
             }
+
+            .country-header {
+                border-bottom-color: var(--gray-700);
+            }
+
+            .country-title {
+                color: var(--gray-50);
+            }
+
+            .news-item {
+                background: rgba(30, 41, 59, 0.95);
+                border-left-color: var(--primary-400);
+            }
+
+            .news-item:hover {
+                background: rgba(30, 41, 59, 0.98);
+                border-left-color: var(--accent-gold);
+            }
+
+            .news-headline {
+                color: var(--gray-50);
+            }
+
+            .news-headline:hover {
+                color: var(--primary-400);
+            }
+
+            .news-source {
+                color: var(--primary-400);
+                background: rgba(59, 130, 246, 0.1);
+            }
+
+            .news-date {
+                color: var(--gray-400);
+            }
+
+            .news-excerpt {
+                color: var(--gray-300);
+            }
+        }
+
+        /* Country sections styling */
+        .country-section {
+            margin: 4rem 0;
+            scroll-margin-top: 5rem;
+        }
+
+        .country-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .country-header .flag {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+
+        .country-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            font-family: var(--font-display);
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .news-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
+            border-left: 4px solid var(--primary-600);
+            backdrop-filter: blur(10px);
+        }
+
+        .news-item:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: var(--shadow-xl);
+            border-left-color: var(--accent-gold);
+        }
+
+        .news-headline {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            transition: var(--transition-quick);
+        }
+
+        .news-headline:hover {
+            color: var(--primary-600);
+        }
+
+        .news-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .news-source {
+            font-weight: 500;
+            color: var(--primary-600);
+            background: var(--primary-50);
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .news-date {
+            color: var(--gray-500);
+            font-size: 0.75rem;
+        }
+
+        .news-excerpt {
+            color: var(--gray-600);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-smooth);
+            z-index: 1000;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .back-to-top.visible {
+            display: flex;
         }
 
         /* Enhanced Responsive design */
@@ -437,6 +601,32 @@
                 min-height: 140px;
                 border-radius: 16px;
             }
+
+            .country-header .flag {
+                font-size: 1.5rem;
+            }
+
+            .country-title {
+                font-size: 1.5rem;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .news-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.25rem;
+            }
+
+            .back-to-top {
+                bottom: 1rem;
+                right: 1rem;
+                width: 45px;
+                height: 45px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -455,6 +645,20 @@
             .country-button {
                 padding: 1rem 1.5rem;
                 font-size: 0.9rem;
+            }
+
+            .country-header {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+            }
+
+            .news-item {
+                padding: 1rem;
+            }
+
+            .news-grid {
+                gap: 0.75rem;
             }
 
             .section-content {
@@ -565,28 +769,525 @@
                     <span>Market indices and stock performance widgets coming soon.</span>
                 </div>
             </section>
+
+            <!-- Country-specific news sections -->
+            <section id="germany" class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇩🇪</span>
+                    <h2 class="country-title">Germany - Public Companies News</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <a href="#" class="news-headline">SAP Announces Strong Q3 Results with Cloud Revenue Growth</a>
+                        <div class="news-meta">
+                            <span class="news-source">Financial Times</span>
+                            <span class="news-date">2 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">German software giant SAP reported better-than-expected third quarter results, driven by strong cloud subscription growth and digital transformation initiatives.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Volkswagen Invests €2.6B in Electric Vehicle Production</a>
+                        <div class="news-meta">
+                            <span class="news-source">Reuters</span>
+                            <span class="news-date">4 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">The automotive manufacturer announces major investment in EV infrastructure across German facilities, aiming to accelerate transition to electric mobility.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Siemens Energy Secures Major Wind Power Contract</a>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="news-date">6 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Siemens Energy wins significant offshore wind project contract, reinforcing its position in the renewable energy sector with innovative turbine technology.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Deutsche Bank Reports Improved Profitability</a>
+                        <div class="news-meta">
+                            <span class="news-source">Wall Street Journal</span>
+                            <span class="news-date">8 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Germany's largest bank shows steady improvement in key financial metrics, with reduced operational costs and stronger capital ratios.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Bayer Advances in Pharmaceutical Pipeline Development</a>
+                        <div class="news-meta">
+                            <span class="news-source">Market Watch</span>
+                            <span class="news-date">12 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Bayer announces positive clinical trial results for new oncology treatments, strengthening its pharmaceutical division's growth prospects.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Adidas Launches Sustainable Product Initiative</a>
+                        <div class="news-meta">
+                            <span class="news-source">CNBC</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">The sportswear company unveils comprehensive sustainability program, targeting carbon-neutral production by 2025 with innovative materials.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">BMW Expands Digital Services Portfolio</a>
+                        <div class="news-meta">
+                            <span class="news-source">TechCrunch</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">BMW introduces new connected car services and mobility solutions, focusing on software-driven revenue streams and customer experience.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">BASF Invests in Circular Economy Solutions</a>
+                        <div class="news-meta">
+                            <span class="news-source">Chemical Week</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Chemical giant BASF announces major investment in recycling technologies and sustainable chemistry solutions for various industries.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Allianz Strengthens ESG Investment Strategy</a>
+                        <div class="news-meta">
+                            <span class="news-source">Insurance Journal</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">European insurance leader Allianz expands its environmental, social, and governance investment framework, targeting sustainable returns.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Merck KGaA Advances in Life Science Innovation</a>
+                        <div class="news-meta">
+                            <span class="news-source">BioPharma Dive</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">German science and technology company Merck KGaA announces breakthrough in gene editing technologies and laboratory equipment.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="france" class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇫🇷</span>
+                    <h2 class="country-title">France - Public Companies News</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <a href="#" class="news-headline">LVMH Reports Record Sales in Luxury Goods Segment</a>
+                        <div class="news-meta">
+                            <span class="news-source">Financial Times</span>
+                            <span class="news-date">3 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Luxury conglomerate LVMH achieves unprecedented sales figures, driven by strong demand in Asia and recovery in European markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Total Energies Accelerates Renewable Energy Transition</a>
+                        <div class="news-meta">
+                            <span class="news-source">Reuters</span>
+                            <span class="news-date">5 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">French energy giant announces major solar and wind projects across Europe, part of its strategy to achieve net-zero emissions by 2050.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Airbus Delivers Record Number of Aircraft</a>
+                        <div class="news-meta">
+                            <span class="news-source">Aviation Week</span>
+                            <span class="news-date">7 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">European aerospace manufacturer Airbus achieves milestone delivery numbers, with strong order backlog supporting future growth projections.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Sanofi Advances in mRNA Vaccine Technology</a>
+                        <div class="news-meta">
+                            <span class="news-source">BioPharma Dive</span>
+                            <span class="news-date">10 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">French pharmaceutical company Sanofi makes significant progress in mRNA vaccine development, expanding its infectious disease portfolio.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">L'Oréal Launches AI-Powered Beauty Solutions</a>
+                        <div class="news-meta">
+                            <span class="news-source">Beauty Independent</span>
+                            <span class="news-date">14 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Global beauty leader L'Oréal introduces artificial intelligence applications for personalized skincare and cosmetics recommendations.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Renault Expands Electric Vehicle Lineup</a>
+                        <div class="news-meta">
+                            <span class="news-source">Automotive News</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">French automaker Renault unveils new electric vehicle models and charging infrastructure partnerships across European markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Schneider Electric Innovates in Energy Management</a>
+                        <div class="news-meta">
+                            <span class="news-source">Smart Grid News</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Schneider Electric develops new digital solutions for industrial energy efficiency and smart grid management systems.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Vivendi Restructures Media Portfolio</a>
+                        <div class="news-meta">
+                            <span class="news-source">Media Post</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">French media conglomerate Vivendi announces strategic restructuring of its entertainment and communications assets for digital growth.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Carrefour Expands E-commerce Operations</a>
+                        <div class="news-meta">
+                            <span class="news-source">Retail Dive</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">European retail giant Carrefour invests heavily in digital transformation and online grocery delivery services across multiple markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Danone Focuses on Plant-Based Innovation</a>
+                        <div class="news-meta">
+                            <span class="news-source">Food Business</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">Food and beverage company Danone accelerates plant-based product development, targeting growing consumer demand for sustainable nutrition.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="italy" class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇮🇹</span>
+                    <h2 class="country-title">Italy - Public Companies News</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Ferrari Unveils New Hybrid Supercar Technology</a>
+                        <div class="news-meta">
+                            <span class="news-source">Motor Trend</span>
+                            <span class="news-date">2 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian luxury carmaker Ferrari introduces cutting-edge hybrid technology in its latest supercar model, combining performance with sustainability.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">ENI Invests in Green Hydrogen Production</a>
+                        <div class="news-meta">
+                            <span class="news-source">Energy Voice</span>
+                            <span class="news-date">4 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian energy company ENI announces major investment in green hydrogen facilities, supporting Europe's clean energy transition goals.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Prada Group Reports Strong Asian Market Growth</a>
+                        <div class="news-meta">
+                            <span class="news-source">Fashion Network</span>
+                            <span class="news-date">6 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Luxury fashion house Prada shows robust growth in Asian markets, with strong performance from premium leather goods and accessories.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Telecom Italia Advances 5G Network Deployment</a>
+                        <div class="news-meta">
+                            <span class="news-source">Mobile World Live</span>
+                            <span class="news-date">8 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian telecommunications leader accelerates 5G infrastructure rollout across major cities, enhancing digital connectivity capabilities.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Intesa Sanpaolo Strengthens Digital Banking</a>
+                        <div class="news-meta">
+                            <span class="news-source">Banking Technology</span>
+                            <span class="news-date">12 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Italy's largest bank expands digital services portfolio with innovative mobile banking solutions and fintech partnerships.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Stellantis Electrifies Italian Manufacturing</a>
+                        <div class="news-meta">
+                            <span class="news-source">Automotive News Europe</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Multinational automotive corporation Stellantis invests in electric vehicle production at Italian facilities, creating thousands of jobs.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Enel Leads Renewable Energy Innovation</a>
+                        <div class="news-meta">
+                            <span class="news-source">PV Magazine</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian utility giant Enel pioneers new solar and wind technologies, expanding renewable energy capacity across European markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Generali Expands Insurance Technology</a>
+                        <div class="news-meta">
+                            <span class="news-source">Insurance Business</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Insurance leader Generali develops AI-powered risk assessment tools and digital customer service platforms for European markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Leonardo Advances Aerospace Defense Systems</a>
+                        <div class="news-meta">
+                            <span class="news-source">Defense News</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian aerospace and defense company Leonardo secures major contracts for advanced helicopter and satellite systems development.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">UniCredit Enhances Cross-Border Services</a>
+                        <div class="news-meta">
+                            <span class="news-source">European Banking</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">Italian banking group UniCredit improves international banking services with new digital platforms for business and retail customers.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="netherlands" class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇳🇱</span>
+                    <h2 class="country-title">Netherlands - Public Companies News</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <a href="#" class="news-headline">ASML Reports Strong Demand for Chip Equipment</a>
+                        <div class="news-meta">
+                            <span class="news-source">Semiconductor Today</span>
+                            <span class="news-date">1 hour ago</span>
+                        </div>
+                        <p class="news-excerpt">Dutch semiconductor equipment manufacturer ASML sees robust demand for advanced lithography systems, supporting global chip production growth.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Shell Accelerates Low-Carbon Energy Investments</a>
+                        <div class="news-meta">
+                            <span class="news-source">Energy Transition</span>
+                            <span class="news-date">3 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Energy giant Shell increases investments in renewable energy projects and carbon capture technologies as part of net-zero strategy.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Philips Innovates in Health Technology</a>
+                        <div class="news-meta">
+                            <span class="news-source">HealthTech Magazine</span>
+                            <span class="news-date">5 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Healthcare technology leader Philips develops new medical imaging and patient monitoring solutions, improving healthcare outcomes worldwide.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">ING Bank Expands Digital Payment Solutions</a>
+                        <div class="news-meta">
+                            <span class="news-source">Fintech News</span>
+                            <span class="news-date">7 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Dutch banking giant ING launches innovative payment technologies and financial services for business and consumer markets across Europe.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Unilever Advances Sustainable Product Portfolio</a>
+                        <div class="news-meta">
+                            <span class="news-source">Sustainable Brands</span>
+                            <span class="news-date">9 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Consumer goods company Unilever introduces new sustainable packaging and product formulations, reducing environmental impact globally.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Heineken Invests in Brewery Innovation</a>
+                        <div class="news-meta">
+                            <span class="news-source">Beverage Industry</span>
+                            <span class="news-date">11 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">International brewing company Heineken modernizes production facilities with sustainable brewing technologies and new product development.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">KPN Enhances 5G Network Infrastructure</a>
+                        <div class="news-meta">
+                            <span class="news-source">Telecom Paper</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Dutch telecommunications provider KPN expands 5G coverage and introduces new business connectivity solutions for enterprise customers.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">DSM Develops Nutritional Innovation</a>
+                        <div class="news-meta">
+                            <span class="news-source">Nutraceuticals World</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Dutch nutrition and materials company DSM creates new sustainable nutrition solutions for food, feed, and pharmaceutical industries.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">NN Group Strengthens ESG Investment Focus</a>
+                        <div class="news-meta">
+                            <span class="news-source">ESG Today</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Insurance and asset management company NN Group enhances environmental, social, and governance investment strategies and products.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">ASMI Advances Semiconductor Manufacturing</a>
+                        <div class="news-meta">
+                            <span class="news-source">Electronics Weekly</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">ASM International develops next-generation semiconductor processing equipment, supporting advanced chip manufacturing technologies.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="spain" class="country-section">
+                <div class="country-header">
+                    <span class="flag">🇪🇸</span>
+                    <h2 class="country-title">Spain - Public Companies News</h2>
+                </div>
+                <div class="news-grid">
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Iberdrola Leads Global Renewable Energy Expansion</a>
+                        <div class="news-meta">
+                            <span class="news-source">Renewable Energy World</span>
+                            <span class="news-date">2 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Spanish utility giant Iberdrola announces major offshore wind projects across multiple continents, reinforcing its clean energy leadership.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Santander Bank Expands Digital Services</a>
+                        <div class="news-meta">
+                            <span class="news-source">Banking Dive</span>
+                            <span class="news-date">4 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Banco Santander launches innovative digital banking platforms and fintech partnerships across Latin American and European markets.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Inditex Reports Strong International Growth</a>
+                        <div class="news-meta">
+                            <span class="news-source">Fashion Business</span>
+                            <span class="news-date">6 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Fashion retailer Inditex, owner of Zara, shows robust international expansion with sustainable fashion initiatives and e-commerce growth.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Telefónica Advances 5G Technology Deployment</a>
+                        <div class="news-meta">
+                            <span class="news-source">Total Telecom</span>
+                            <span class="news-date">8 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Spanish telecommunications leader Telefónica accelerates 5G network rollout and develops new digital services for business customers.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Repsol Invests in Hydrogen Technology</a>
+                        <div class="news-meta">
+                            <span class="news-source">Hydrogen Central</span>
+                            <span class="news-date">10 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Energy company Repsol develops green hydrogen production facilities and distribution networks, supporting Spain's energy transition.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">BBVA Enhances Sustainable Finance Offerings</a>
+                        <div class="news-meta">
+                            <span class="news-source">Green Finance</span>
+                            <span class="news-date">12 hours ago</span>
+                        </div>
+                        <p class="news-excerpt">Spanish bank BBVA expands green financing products and ESG investment solutions for corporate and retail banking clients.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Amadeus Innovates Travel Technology Solutions</a>
+                        <div class="news-meta">
+                            <span class="news-source">Travel Technology</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Global travel technology company Amadeus develops new booking platforms and travel management solutions for post-pandemic recovery.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Grifols Advances in Plasma-Based Therapies</a>
+                        <div class="news-meta">
+                            <span class="news-source">BioPharma Reporter</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Healthcare company Grifols expands plasma-derived medicine production and develops new therapeutic treatments for rare diseases.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">ACS Group Secures Major Infrastructure Contract</a>
+                        <div class="news-meta">
+                            <span class="news-source">Construction Europe</span>
+                            <span class="news-date">1 day ago</span>
+                        </div>
+                        <p class="news-excerpt">Spanish construction and services company ACS wins significant international infrastructure projects, strengthening its global presence.</p>
+                    </article>
+                    <article class="news-item">
+                        <a href="#" class="news-headline">Cellnex Expands Telecommunications Infrastructure</a>
+                        <div class="news-meta">
+                            <span class="news-source">Infrastructure Investor</span>
+                            <span class="news-date">2 days ago</span>
+                        </div>
+                        <p class="news-excerpt">European tower infrastructure operator Cellnex accelerates network expansion and 5G infrastructure investments across multiple countries.</p>
+                    </article>
+                </div>
+            </section>
         </div>
     </main>
 
-    <script>
-        // Simple script to handle country button clicks
-        document.querySelectorAll('.country-button').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                const country = this.textContent.trim().split(' ')[0];
-                alert(`${country} market data coming soon! This will redirect to detailed ${country.toLowerCase()} company news and market information.`);
-            });
-        });
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
+        ↑
+    </button>
 
-        // Add smooth scrolling for any anchor links
+    <script>
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({
-                        behavior: 'smooth'
+                        behavior: 'smooth',
+                        block: 'start'
                     });
+                }
+            });
+        });
+
+        // Back to top functionality
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        
+        // Show/hide back to top button based on scroll position
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top when button is clicked
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add click tracking for news headlines (for demo purposes)
+        document.querySelectorAll('.news-headline').forEach(headline => {
+            headline.addEventListener('click', function(e) {
+                e.preventDefault();
+                // In a real application, this would navigate to the full article
+                console.log('News headline clicked:', this.textContent);
+            });
+        });
+
+        // Enhanced country button functionality - now scrolls to country sections
+        document.querySelectorAll('.country-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const countryText = this.textContent.trim().toLowerCase();
+                let targetId = '';
+                
+                if (countryText.includes('germany')) targetId = 'germany';
+                else if (countryText.includes('france')) targetId = 'france';
+                else if (countryText.includes('italy')) targetId = 'italy';
+                else if (countryText.includes('netherlands')) targetId = 'netherlands';
+                else if (countryText.includes('spain')) targetId = 'spain';
+                
+                if (targetId) {
+                    const target = document.getElementById(targetId);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
