@@ -337,100 +337,57 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
-        /* Featured Stories styling */
-        .featured-stories {
-            display: flex;
-            flex-direction: column;
+
+
+        /* Market Data styling - Minimized and compact */
+        .market-data {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1rem;
             background: var(--gradient-glass);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(71, 85, 105, 0.3);
-            border-radius: 20px;
+            border-radius: 16px;
             box-shadow: var(--shadow-xl);
-            padding: 2rem;
-        }
-
-        .featured-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
-        }
-
-        .featured-item:last-child {
-            border-bottom: none;
-        }
-
-        .featured-headline {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
-            transition: var(--transition-quick);
-        }
-
-        .featured-headline:hover {
-            color: var(--accent-primary);
-        }
-
-        .featured-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.875rem;
-            color: var(--text-muted);
-        }
-
-        /* Market Data styling */
-        .market-data {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            background: var(--gradient-glass);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(71, 85, 105, 0.3);
-            border-radius: 20px;
-            box-shadow: var(--shadow-xl);
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
         .market-index {
             text-align: center;
-            padding: 1rem;
+            padding: 0.75rem;
             background: rgba(71, 85, 105, 0.4);
-            border-radius: 12px;
+            border-radius: 8px;
             transition: var(--transition-smooth);
             border: 1px solid rgba(71, 85, 105, 0.3);
         }
 
         .market-index:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
         }
 
         .market-index h3 {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--text-muted);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .index-value {
-            font-size: 1.5rem;
+            font-size: 1.125rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.125rem;
             font-family: var(--font-display);
         }
 
         .index-change {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            padding: 0.25rem 0.5rem;
-            border-radius: 6px;
+            padding: 0.125rem 0.375rem;
+            border-radius: 4px;
             display: inline-block;
         }
 
@@ -444,7 +401,7 @@
             background: rgba(244, 63, 94, 0.1);
         }
 
-        /* Country sections grid layout */
+        /* Country sections grid layout - Enhanced styling */
         .countries-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -455,53 +412,91 @@
         .country-window {
             background: var(--gradient-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(71, 85, 105, 0.3);
-            border-radius: 16px;
-            box-shadow: var(--shadow-xl);
+            border: 2px solid;
+            border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.6), rgba(99, 102, 241, 0.4), rgba(244, 63, 94, 0.3)) 1;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl), 0 0 20px rgba(59, 130, 246, 0.1);
             overflow: hidden;
             transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .country-window::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(99, 102, 241, 0.03), rgba(244, 63, 94, 0.02));
+            pointer-events: none;
+            z-index: 0;
         }
 
         .country-window:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-2xl);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: var(--shadow-2xl), 0 0 30px rgba(59, 130, 246, 0.2);
+            border-image: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(99, 102, 241, 0.6), rgba(244, 63, 94, 0.5)) 1;
         }
 
         .country-window-header {
             display: flex;
             align-items: center;
-            padding: 1.5rem 2rem;
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            padding: 2rem 2rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 50%, rgba(244, 63, 94, 0.8) 100%);
             color: white;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .country-window-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
         }
 
         .country-window-header .flag {
-            font-size: 1.5rem;
-            margin-right: 0.75rem;
+            font-size: 2rem;
+            margin-right: 1rem;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
         }
 
         .country-window-title {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             font-weight: 700;
             font-family: var(--font-display);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.02em;
         }
 
         .country-window-content {
-            padding: 1.5rem 2rem 2rem;
-            max-height: 400px;
-            overflow-y: auto;
+            padding: 2rem;
+            height: 320px;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .headlines-list {
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
+            gap: 0.5rem;
+            height: 100%;
+            overflow: hidden;
         }
 
         .headline-item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(71, 85, 105, 0.2);
             transition: var(--transition-quick);
+            border-radius: 8px;
+            position: relative;
         }
 
         .headline-item:last-child {
@@ -509,21 +504,21 @@
         }
 
         .headline-item:hover {
-            background: rgba(59, 130, 246, 0.05);
-            border-radius: 8px;
-            padding-left: 0.5rem;
-            margin-left: -0.5rem;
-            margin-right: -0.5rem;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.05));
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateX(4px);
+            box-shadow: var(--shadow-sm);
         }
 
         .headline-link {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--text-secondary);
             text-decoration: none;
             line-height: 1.4;
             transition: var(--transition-quick);
             cursor: pointer;
+            display: block;
         }
 
         .headline-link:hover {
@@ -559,6 +554,276 @@
 
         .back-to-top.visible {
             display: flex;
+        }
+
+        /* Professional Footer Styling */
+        .site-footer {
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(99, 102, 241, 0.4), rgba(244, 63, 94, 0.3)) 1;
+            margin-top: 6rem;
+            position: relative;
+        }
+
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 4rem 2rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 200px 200px 300px;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            color: var(--text-secondary);
+        }
+
+        .footer-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-subtitle {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-family: var(--font-display);
+        }
+
+        .footer-description {
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-quick);
+            font-weight: 500;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .footer-link::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: var(--transition-quick);
+            color: var(--accent-primary);
+        }
+
+        .footer-link:hover {
+            color: var(--accent-primary);
+            transform: translateX(0.5rem);
+        }
+
+        .footer-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-glass);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px) scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .newsletter-section {
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-description {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.75rem;
+            background: var(--gradient-glass);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            backdrop-filter: blur(10px);
+            transition: var(--transition-quick);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+        }
+
+        .newsletter-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .newsletter-button {
+            padding: 0.75rem 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            white-space: nowrap;
+        }
+
+        .newsletter-button:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .newsletter-disclaimer {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .gdpr-settings {
+            padding-top: 1rem;
+            border-top: 1px solid rgba(71, 85, 105, 0.3);
+        }
+
+        .gdpr-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .gdpr-button {
+            padding: 0.5rem 1rem;
+            background: rgba(71, 85, 105, 0.4);
+            color: var(--text-secondary);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition-quick);
+            width: 100%;
+        }
+
+        .gdpr-button:hover {
+            background: rgba(71, 85, 105, 0.6);
+            color: var(--text-primary);
+            border-color: var(--accent-primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(71, 85, 105, 0.3);
+            padding: 2rem 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: var(--transition-quick);
+        }
+
+        .footer-bottom-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .disclaimer-notice {
+            background: rgba(71, 85, 105, 0.2);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .disclaimer-notice p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .disclaimer-notice strong {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
 
         /* Enhanced Responsive design */
@@ -607,13 +872,28 @@
             }
 
             .market-data {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 1.5rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.75rem;
+                padding: 1rem;
             }
 
-            .featured-stories {
-                padding: 1.5rem;
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-container {
+                padding: 3rem 1rem 0;
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                gap: 1rem;
             }
 
             .back-to-top {
@@ -665,8 +945,12 @@
                 padding: 1rem;
             }
 
-            .featured-stories {
-                padding: 1rem;
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-button {
+                width: 100%;
             }
         }
 
@@ -737,32 +1021,7 @@
                 </h1>
             </section>
 
-            <section id="news" class="section">
-                <h2 class="section-title">Featured Stories & Breaking News</h2>
-                <div class="featured-stories">
-                    <article class="featured-item">
-                        <a href="article.html?id=sap-q3-results" class="featured-headline">SAP Announces Strong Q3 Results with Cloud Revenue Growth</a>
-                        <div class="featured-meta">
-                            <span class="news-source">Financial Times</span>
-                            <span class="news-date">2 hours ago</span>
-                        </div>
-                    </article>
-                    <article class="featured-item">
-                        <a href="article.html?id=lvmh-record-sales" class="featured-headline">LVMH Reports Record Sales in Luxury Goods Segment</a>
-                        <div class="featured-meta">
-                            <span class="news-source">Financial Times</span>
-                            <span class="news-date">3 hours ago</span>
-                        </div>
-                    </article>
-                    <article class="featured-item">
-                        <a href="article.html?id=siemens-wind-contract" class="featured-headline">Siemens Energy Secures Major Wind Power Contract</a>
-                        <div class="featured-meta">
-                            <span class="news-source">Bloomberg</span>
-                            <span class="news-date">6 hours ago</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
+
 
             <section id="data" class="section">
                 <h2 class="section-title">Market Data</h2>
@@ -1014,6 +1273,104 @@
             </div>
         </div>
     </main>
+
+    <!-- Professional Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Company Information -->
+                <div class="footer-section">
+                    <h3 class="footer-title">European Companies News</h3>
+                    <p class="footer-description">
+                        Your premier source for comprehensive news, analysis, and insights on public companies across Europe. 
+                        Covering major markets including Germany, France, Italy, Netherlands, Spain, and Central & Eastern Europe.
+                    </p>
+                    <div class="footer-social">
+                        <h4 class="footer-subtitle">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="RSS">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M4 11a9 9 0 0 1 9 9"/>
+                                    <path d="M4 4a16 16 0 0 1 16 16"/>
+                                    <circle cx="5" cy="19" r="1"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal & Policies -->
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#terms" class="footer-link">Terms of Service</a></li>
+                        <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="#cookies" class="footer-link">Cookie Policy</a></li>
+                        <li><a href="#gdpr" class="footer-link">GDPR Compliance</a></li>
+                        <li><a href="#disclaimer" class="footer-link">Financial Disclaimer</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Information</a></li>
+                        <li><a href="#careers" class="footer-link">Careers</a></li>
+                        <li><a href="#press" class="footer-link">Press Inquiries</a></li>
+                        <li><a href="#investor" class="footer-link">Investor Relations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter & GDPR Settings -->
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Stay Updated</h4>
+                    <div class="newsletter-section">
+                        <p class="newsletter-description">Subscribe to our newsletter for the latest European market insights.</p>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                            <button type="submit" class="newsletter-button">Subscribe</button>
+                        </form>
+                        <p class="newsletter-disclaimer">By subscribing, you agree to our Privacy Policy and Terms of Service.</p>
+                    </div>
+                    <div class="gdpr-settings">
+                        <h5 class="gdpr-title">GDPR Settings</h5>
+                        <button class="gdpr-button">Manage Cookie Preferences</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2025 European Companies News. All rights reserved.</p>
+                    </div>
+                    <div class="footer-bottom-links">
+                        <a href="#sitemap" class="footer-bottom-link">Sitemap</a>
+                        <a href="#accessibility" class="footer-bottom-link">Accessibility</a>
+                        <a href="#security" class="footer-bottom-link">Security</a>
+                    </div>
+                </div>
+                <div class="disclaimer-notice">
+                    <p><strong>Financial Disclaimer:</strong> The information provided on this website is for general informational purposes only and should not be considered as financial advice. Market data and company information are provided for educational purposes. Always consult with qualified financial advisors before making investment decisions.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Back to top button -->
     <button class="back-to-top" id="backToTopBtn" aria-label="Back to top">
