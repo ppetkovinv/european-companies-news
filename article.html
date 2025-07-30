@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="article-title">European Companies News</title>
+    <meta name="description" content="Read the latest news and analysis about European public companies">
+    <style>
+        :root {
+            /* Dark Premium Color Palette */
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-glass: rgba(31, 41, 59, 0.8);
+            --bg-glass-light: rgba(51, 65, 85, 0.6);
+            
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            
+            --accent-primary: #3b82f6;
+            --accent-secondary: #6366f1;
+            --accent-gold: #fbbf24;
+            --accent-emerald: #10b981;
+            --accent-rose: #f43f5e;
+            
+            /* Professional Gradients */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-premium: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #fb7185 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(51, 65, 85, 0.8) 0%, rgba(71, 85, 105, 0.6) 100%);
+            
+            /* Typography */
+            --font-display: Georgia, 'Times New Roman', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-quick: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            font-size: 16px;
+            letter-spacing: -0.025em;
+            scroll-behavior: smooth;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
+            padding: 0.75rem 0;
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition-quick);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition-quick);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            min-height: 100vh;
+            padding: 8rem 0 6rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Article Layout */
+        .article-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .article-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .article-source {
+            font-weight: 600;
+            color: var(--accent-primary);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+
+        .article-date {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--gradient-glass);
+            color: var(--text-primary);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-md);
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            background: var(--bg-glass-light);
+        }
+
+        .article-content {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-primary);
+        }
+
+        .article-text {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 1.125rem;
+            white-space: pre-line;
+        }
+
+        .article-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Related Articles */
+        .related-section {
+            margin-top: 4rem;
+        }
+
+        .related-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .related-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .related-article {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(71, 85, 105, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: block;
+        }
+
+        .related-article:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .related-article-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .related-article-meta {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 6rem 0 4rem;
+            }
+
+            .article-content {
+                padding: 2rem 1.5rem;
+                border-radius: 16px;
+            }
+
+            .article-meta {
+                gap: 1rem;
+            }
+
+            .related-articles {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 5rem 0 3rem;
+            }
+
+            .article-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .article-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh;
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        .error-message {
+            text-align: center;
+            color: var(--accent-rose);
+            font-size: 1.125rem;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">European Markets</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#news">News</a></li>
+                    <li><a href="index.html#data">Market Data</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="article-header">
+                <a href="index.html" class="back-button">
+                    ← Back to News
+                </a>
+            </div>
+
+            <div id="article-loading" class="loading">
+                Loading article...
+            </div>
+
+            <div id="article-error" class="error-message" style="display: none;">
+                Article not found.
+            </div>
+
+            <div id="article-container" style="display: none;">
+                <div class="article-header">
+                    <h1 class="article-title" id="article-title-display"></h1>
+                    <div class="article-meta">
+                        <span class="article-source" id="article-source-display"></span>
+                        <span class="article-date" id="article-date-display"></span>
+                    </div>
+                </div>
+
+                <article class="article-content">
+                    <div class="article-text" id="article-text-display"></div>
+                </article>
+
+                <section class="related-section">
+                    <h2 class="related-title">Related Articles</h2>
+                    <div class="related-articles" id="related-articles"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Article data
+        const articles = {
+            'sap-q3-results': {
+                title: 'SAP Announces Strong Q3 Results with Cloud Revenue Growth',
+                source: 'Financial Times',
+                date: '2 hours ago',
+                country: 'Germany',
+                fullText: `German software giant SAP reported better-than-expected third quarter results, driven by strong cloud subscription growth and digital transformation initiatives across global markets.
+
+The company's cloud revenues increased by 24% year-over-year, reaching €3.1 billion, while total revenue grew 9% to €7.74 billion. Chief Executive Christian Klein highlighted the strong momentum in enterprise resource planning (ERP) solutions and artificial intelligence capabilities.
+
+"Our cloud transformation continues to accelerate, with customers increasingly adopting our comprehensive business technology platform," Klein stated during the quarterly earnings call. The company raised its full-year guidance, projecting cloud revenue growth of 23-26%.
+
+SAP's RISE with SAP program, which helps customers migrate to the cloud, signed 850 new deals in the quarter, demonstrating robust demand for digital transformation services. The company's operating profit margin improved to 23.1%, exceeding analyst expectations.
+
+Looking ahead, SAP expects continued strength in its core markets, particularly in manufacturing, retail, and financial services sectors. The company is investing heavily in AI and machine learning capabilities to enhance its cloud offerings and maintain competitive advantage in the enterprise software market.`
+            },
+            'volkswagen-ev-investment': {
+                title: 'Volkswagen Invests €2.6B in Electric Vehicle Production',
+                source: 'Reuters',
+                date: '4 hours ago',
+                country: 'Germany',
+                fullText: `Volkswagen Group announced a major €2.6 billion investment in electric vehicle infrastructure across its German manufacturing facilities, marking the latest step in the automaker's ambitious transition to electric mobility.
+
+The investment will fund the construction of new battery production lines, charging infrastructure, and the conversion of existing assembly plants to accommodate electric vehicle manufacturing. The Wolfsburg-based company plans to produce 1.5 million electric vehicles annually by 2025.
+
+"This investment represents our commitment to making Germany the heart of our electric vehicle production," said CEO Herbert Diess. The funding will be distributed across facilities in Wolfsburg, Hanover, and Dresden, creating approximately 2,500 new jobs.
+
+The announcement comes as European automakers face increasing pressure to meet stringent emissions regulations and compete with Tesla and Chinese electric vehicle manufacturers. Volkswagen's ID series has gained traction in European markets, with the ID.4 becoming one of the best-selling electric SUVs.
+
+The company also revealed plans to establish partnerships with battery suppliers and expand its charging network across Europe. These initiatives are part of Volkswagen's broader strategy to achieve carbon neutrality by 2050 and maintain its position as Europe's largest automaker in the electric vehicle era.`
+            },
+            'siemens-wind-contract': {
+                title: 'Siemens Energy Secures Major Wind Power Contract',
+                source: 'Bloomberg',
+                date: '6 hours ago',
+                country: 'Germany',
+                fullText: `Siemens Energy has secured a significant offshore wind project contract worth over €1.2 billion, reinforcing its position as a leader in the renewable energy sector with innovative turbine technology and comprehensive project services.
+
+The contract involves the supply and installation of 87 wind turbines for the North Sea wind farm, which will generate enough clean energy to power 900,000 homes. The project represents one of the largest offshore wind installations in European waters.
+
+"This contract demonstrates our technological leadership in offshore wind and our ability to deliver large-scale renewable energy projects," commented CEO Christian Bruch. The turbines will feature the latest SG 14-236 DD model, offering enhanced efficiency and reduced maintenance requirements.
+
+Siemens Energy's wind power division has experienced robust growth, with order intake increasing 47% year-over-year. The company is benefiting from accelerating global demand for renewable energy and supportive government policies promoting clean energy transition.
+
+The project is expected to be completed by 2026, with installation beginning in late 2024. Siemens Energy will also provide long-term service and maintenance support, ensuring optimal performance throughout the wind farm's operational lifetime. The contract strengthens the company's order backlog and provides visibility for future revenue growth.`
+            },
+            'lvmh-record-sales': {
+                title: 'LVMH Reports Record Sales in Luxury Goods Segment',
+                source: 'Financial Times', 
+                date: '3 hours ago',
+                country: 'France',
+                fullText: `LVMH Moët Hennessy Louis Vuitton achieved unprecedented sales figures in its luxury goods segment, driven by exceptional demand in Asia and a strong recovery in European markets following pandemic-related disruptions.
+
+The French luxury conglomerate reported revenue of €19.8 billion in the third quarter, representing a 19% increase compared to the same period last year. The fashion and leather goods division, anchored by Louis Vuitton and Christian Dior, contributed €7.9 billion in sales.
+
+Chairman and CEO Bernard Arnault attributed the strong performance to "exceptional desirability of our brands and the craftsmanship excellence that defines our maisons." Asian markets, particularly China and Japan, showed remarkable resilience with growth exceeding 25%.
+
+The company's selective retailing division, including Sephora and DFS, also demonstrated strong momentum with revenue growth of 22%. LVMH's wine and spirits portfolio benefited from premium positioning and growing demand for high-end cognac and champagne.
+
+Looking forward, LVMH remains confident about continued growth prospects, despite global economic uncertainties. The company is expanding its retail footprint in key markets and investing in digital capabilities to enhance customer experience across all touchpoints.`
+            },
+            'total-renewable-transition': {
+                title: 'Total Energies Accelerates Renewable Energy Transition',
+                source: 'Reuters',
+                date: '5 hours ago',
+                country: 'France',
+                fullText: `Total Energies announced an acceleration of its renewable energy strategy with a new €10 billion investment program focused on solar, wind, and battery storage projects across Europe and emerging markets.
+
+The French energy giant plans to expand its renewable generation capacity to 35 GW by 2025, up from the previous target of 25 GW. CEO Patrick Pouyanné emphasized the company's commitment to becoming a leading player in the energy transition while maintaining profitability.
+
+"We are transforming Total Energies into a multi-energy company that delivers clean, reliable, and affordable energy solutions," Pouyanné stated at the company's investor day. The investment will be distributed across offshore wind farms, large-scale solar installations, and innovative energy storage systems.
+
+The company's renewable projects portfolio includes major offshore wind developments in the North Sea and floating solar installations in Southeast Asia. Total Energies is also expanding its electric vehicle charging network, with plans to operate 150,000 charging points by 2025.
+
+This strategic pivot comes as European energy companies face increasing pressure from regulators and investors to reduce carbon emissions and adapt to changing market dynamics. Total Energies aims to achieve net-zero emissions by 2050, with significant interim targets for 2030.`
+            },
+            'cee-markets-outlook': {
+                title: 'Central and Eastern European Markets Show Strong Growth Potential',
+                source: 'Bloomberg',
+                date: '1 hour ago',
+                country: 'CEE',
+                fullText: `Central and Eastern European (CEE) markets are experiencing robust economic growth and increased investor interest, driven by strong fundamentals, EU integration benefits, and strategic geographic positioning.
+
+Poland leads the region with GDP growth of 4.2% year-over-year, supported by strong domestic consumption and EU funding for infrastructure projects. The Warsaw Stock Exchange has seen significant foreign investment inflows, particularly in technology and renewable energy sectors.
+
+Czech Republic's economy continues to benefit from its industrial base and proximity to Germany, with major automotive and manufacturing companies expanding operations. The Prague Stock Exchange has recorded its best performance in five years, driven by strong earnings from listed companies.
+
+Hungary's focus on automotive manufacturing and electronics has attracted substantial foreign direct investment, while Romania's energy sector transformation and agricultural modernization present compelling investment opportunities.
+
+"CEE markets offer a unique combination of growth potential, EU market access, and attractive valuations compared to Western European counterparts," noted regional analyst Maria Kowalski. The region's integration with Western European supply chains and growing middle class create additional tailwinds for sustained growth.`
+            }
+        };
+
+        // Get article ID from URL parameters
+        function getArticleId() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id');
+        }
+
+        // Display article content
+        function displayArticle(articleId) {
+            const article = articles[articleId];
+            
+            if (!article) {
+                document.getElementById('article-loading').style.display = 'none';
+                document.getElementById('article-error').style.display = 'block';
+                return;
+            }
+
+            // Update page title
+            document.title = article.title + ' - European Companies News';
+            document.getElementById('article-title').content = article.title;
+
+            // Populate article content
+            document.getElementById('article-title-display').textContent = article.title;
+            document.getElementById('article-source-display').textContent = article.source;
+            document.getElementById('article-date-display').textContent = article.date;
+            
+            // Format article text with paragraphs
+            const formattedText = article.fullText.split('\n\n').map(paragraph => 
+                `<p>${paragraph.trim()}</p>`
+            ).join('');
+            document.getElementById('article-text-display').innerHTML = formattedText;
+
+            // Show article container
+            document.getElementById('article-loading').style.display = 'none';
+            document.getElementById('article-container').style.display = 'block';
+
+            // Load related articles
+            loadRelatedArticles(articleId, article.country);
+        }
+
+        // Load related articles from the same country
+        function loadRelatedArticles(currentArticleId, country) {
+            const relatedContainer = document.getElementById('related-articles');
+            const relatedArticles = Object.entries(articles)
+                .filter(([id, article]) => id !== currentArticleId && (article.country === country || country === 'CEE'))
+                .slice(0, 3);
+
+            relatedContainer.innerHTML = relatedArticles.map(([id, article]) => `
+                <a href="article.html?id=${id}" class="related-article">
+                    <h3 class="related-article-title">${article.title}</h3>
+                    <div class="related-article-meta">${article.source} • ${article.date}</div>
+                </a>
+            `).join('');
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            const articleId = getArticleId();
+            if (articleId) {
+                displayArticle(articleId);
+            } else {
+                document.getElementById('article-loading').style.display = 'none';
+                document.getElementById('article-error').style.display = 'block';
+                document.getElementById('article-error').textContent = 'No article specified.';
+            }
+        });
+    </script>
+</body>
+</html>
