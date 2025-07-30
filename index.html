@@ -7,30 +7,20 @@
     <meta name="description" content="Comprehensive news, analysis, and insights for public companies across Europe. Covering Germany, France, Italy, Netherlands, and Spain.">
     <style>
         :root {
-            /* Professional Color Palette */
-            --primary-50: #eff6ff;
-            --primary-100: #dbeafe;
-            --primary-200: #bfdbfe;
-            --primary-300: #93c5fd;
-            --primary-400: #60a5fa;
-            --primary-500: #3b82f6;
-            --primary-600: #2563eb;
-            --primary-700: #1d4ed8;
-            --primary-800: #1e40af;
-            --primary-900: #1e3a8a;
+            /* Dark Premium Color Palette */
+            --bg-primary: #0a0e1a;
+            --bg-secondary: #111827;
+            --bg-tertiary: #1f2937;
+            --bg-glass: rgba(31, 41, 59, 0.8);
+            --bg-glass-light: rgba(51, 65, 85, 0.6);
             
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-800: #1f2937;
-            --gray-900: #111827;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
             
-            --accent-gold: #f59e0b;
+            --accent-primary: #3b82f6;
+            --accent-secondary: #6366f1;
+            --accent-gold: #fbbf24;
             --accent-emerald: #10b981;
             --accent-rose: #f43f5e;
             
@@ -38,18 +28,19 @@
             --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --gradient-premium: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #fb7185 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(51, 65, 85, 0.8) 0%, rgba(71, 85, 105, 0.6) 100%);
             
             /* Typography Scale */
             --font-display: Georgia, 'Times New Roman', serif;
             --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             
             /* Shadows */
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
             
             /* Animation */
             --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -65,8 +56,8 @@
         body {
             font-family: var(--font-body);
             line-height: 1.7;
-            color: var(--gray-800);
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
             font-size: 16px;
             letter-spacing: -0.025em;
             scroll-behavior: smooth;
@@ -84,9 +75,9 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 14, 26, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
             padding: 0.75rem 0;
             z-index: 1000;
             transition: var(--transition-smooth);
@@ -119,7 +110,7 @@
         }
 
         .nav-links a {
-            color: var(--gray-600);
+            color: var(--text-secondary);
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition-quick);
@@ -127,7 +118,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-600);
+            color: var(--accent-primary);
         }
 
         .nav-links a::after {
@@ -174,7 +165,7 @@
             font-family: var(--font-display);
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            color: var(--gray-900);
+            color: var(--text-primary);
             margin-bottom: 2rem;
             line-height: 1.1;
             letter-spacing: -0.02em;
@@ -199,7 +190,7 @@
 
         .hero-description {
             font-size: clamp(1.125rem, 2vw, 1.25rem);
-            color: var(--gray-600);
+            color: var(--text-secondary);
             max-width: 52rem;
             margin: 0 auto 3rem;
             font-weight: 400;
@@ -287,7 +278,7 @@
             font-family: var(--font-display);
             font-size: clamp(1.75rem, 3vw, 2.25rem);
             font-weight: 600;
-            color: var(--gray-900);
+            color: var(--text-primary);
             margin-bottom: 2rem;
             text-align: center;
             position: relative;
@@ -306,9 +297,9 @@
         }
 
         .section-content {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: var(--gradient-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(71, 85, 105, 0.3);
             border-radius: 20px;
             box-shadow: var(--shadow-xl);
             padding: 3rem 2rem;
@@ -316,7 +307,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--gray-600);
+            color: var(--text-secondary);
             text-align: center;
             font-size: 1.125rem;
             font-weight: 500;
@@ -346,112 +337,14 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
         }
 
-        /* Enhanced Dark mode support */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --gradient-premium: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #fb7185 100%);
-            }
-
-            body {
-                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-                color: var(--gray-100);
-            }
-
-            .header-nav {
-                background: rgba(15, 23, 42, 0.95);
-                border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-            }
-
-            .nav-links a {
-                color: var(--gray-300);
-            }
-
-            .nav-links a:hover {
-                color: var(--primary-400);
-            }
-
-            .hero-title {
-                color: var(--gray-50);
-            }
-
-            .hero-description {
-                color: var(--gray-300);
-            }
-
-            .section-title {
-                color: var(--gray-50);
-            }
-
-            .section-content {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
-                color: var(--gray-300);
-                border: 1px solid rgba(148, 163, 184, 0.1);
-            }
-
-            .section-content:hover {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
-            }
-
-            .featured-stories,
-            .market-data {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
-                border: 1px solid rgba(148, 163, 184, 0.1);
-            }
-
-            .featured-headline {
-                color: var(--gray-50);
-            }
-
-            .featured-headline:hover {
-                color: var(--primary-400);
-            }
-
-            .market-index {
-                background: rgba(30, 41, 59, 0.6);
-            }
-
-            .index-value {
-                color: var(--gray-50);
-            }
-
-            .country-window {
-                background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
-                border: 1px solid rgba(148, 163, 184, 0.1);
-            }
-
-            .country-window-header {
-                background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
-            }
-
-            .country-window-title {
-                color: var(--gray-50);
-            }
-
-            .headline-item {
-                border-bottom-color: var(--gray-700);
-            }
-
-            .headline-item:hover {
-                background: rgba(59, 130, 246, 0.1);
-            }
-
-            .headline-link {
-                color: var(--gray-300);
-            }
-
-            .headline-link:hover {
-                color: var(--primary-400);
-            }
-        }
-
         /* Featured Stories styling */
         .featured-stories {
             display: flex;
             flex-direction: column;
             gap: 1rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: var(--gradient-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(71, 85, 105, 0.3);
             border-radius: 20px;
             box-shadow: var(--shadow-xl);
             padding: 2rem;
@@ -459,7 +352,7 @@
 
         .featured-item {
             padding: 1rem 0;
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
         }
 
         .featured-item:last-child {
@@ -469,7 +362,7 @@
         .featured-headline {
             font-size: 1.125rem;
             font-weight: 600;
-            color: var(--gray-900);
+            color: var(--text-primary);
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
@@ -478,7 +371,7 @@
         }
 
         .featured-headline:hover {
-            color: var(--primary-600);
+            color: var(--accent-primary);
         }
 
         .featured-meta {
@@ -486,7 +379,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 0.875rem;
-            color: var(--gray-600);
+            color: var(--text-muted);
         }
 
         /* Market Data styling */
@@ -494,9 +387,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.8) 100%);
+            background: var(--gradient-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(71, 85, 105, 0.3);
             border-radius: 20px;
             box-shadow: var(--shadow-xl);
             padding: 2rem;
@@ -505,9 +398,10 @@
         .market-index {
             text-align: center;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(71, 85, 105, 0.4);
             border-radius: 12px;
             transition: var(--transition-smooth);
+            border: 1px solid rgba(71, 85, 105, 0.3);
         }
 
         .market-index:hover {
@@ -518,7 +412,7 @@
         .market-index h3 {
             font-size: 0.875rem;
             font-weight: 600;
-            color: var(--gray-600);
+            color: var(--text-muted);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -527,7 +421,7 @@
         .index-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--gray-900);
+            color: var(--text-primary);
             margin-bottom: 0.25rem;
             font-family: var(--font-display);
         }
@@ -559,9 +453,9 @@
         }
 
         .country-window {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+            background: var(--gradient-glass);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(71, 85, 105, 0.3);
             border-radius: 16px;
             box-shadow: var(--shadow-xl);
             overflow: hidden;
@@ -577,7 +471,7 @@
             display: flex;
             align-items: center;
             padding: 1.5rem 2rem;
-            background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
             color: white;
         }
 
@@ -606,7 +500,7 @@
 
         .headline-item {
             padding: 0.75rem 0;
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 1px solid rgba(71, 85, 105, 0.3);
             transition: var(--transition-quick);
         }
 
@@ -625,7 +519,7 @@
         .headline-link {
             font-size: 1rem;
             font-weight: 500;
-            color: var(--gray-800);
+            color: var(--text-secondary);
             text-decoration: none;
             line-height: 1.4;
             transition: var(--transition-quick);
@@ -633,7 +527,7 @@
         }
 
         .headline-link:hover {
-            color: var(--primary-600);
+            color: var(--accent-primary);
         }
 
         /* Back to top button */
@@ -847,24 +741,24 @@
                 <h2 class="section-title">Featured Stories & Breaking News</h2>
                 <div class="featured-stories">
                     <article class="featured-item">
-                        <a href="#" class="featured-headline">European Central Bank Holds Interest Rates Steady</a>
+                        <a href="article.html?id=sap-q3-results" class="featured-headline">SAP Announces Strong Q3 Results with Cloud Revenue Growth</a>
                         <div class="featured-meta">
                             <span class="news-source">Financial Times</span>
-                            <span class="news-date">30 minutes ago</span>
+                            <span class="news-date">2 hours ago</span>
                         </div>
                     </article>
                     <article class="featured-item">
-                        <a href="#" class="featured-headline">EU Companies Report Strong Q3 Earnings Growth</a>
+                        <a href="article.html?id=lvmh-record-sales" class="featured-headline">LVMH Reports Record Sales in Luxury Goods Segment</a>
                         <div class="featured-meta">
-                            <span class="news-source">Reuters</span>
-                            <span class="news-date">1 hour ago</span>
+                            <span class="news-source">Financial Times</span>
+                            <span class="news-date">3 hours ago</span>
                         </div>
                     </article>
                     <article class="featured-item">
-                        <a href="#" class="featured-headline">Energy Sector Leads European Market Rally</a>
+                        <a href="article.html?id=siemens-wind-contract" class="featured-headline">Siemens Energy Secures Major Wind Power Contract</a>
                         <div class="featured-meta">
                             <span class="news-source">Bloomberg</span>
-                            <span class="news-date">2 hours ago</span>
+                            <span class="news-date">6 hours ago</span>
                         </div>
                     </article>
                 </div>
@@ -916,28 +810,28 @@
                     <div class="country-window-content">
                         <div class="headlines-list">
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="sap-q3-results">SAP Announces Strong Q3 Results with Cloud Revenue Growth</a>
+                                <a href="article.html?id=sap-q3-results" class="headline-link">SAP Announces Strong Q3 Results with Cloud Revenue Growth</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="volkswagen-ev-investment">Volkswagen Invests €2.6B in Electric Vehicle Production</a>
+                                <a href="article.html?id=volkswagen-ev-investment" class="headline-link">Volkswagen Invests €2.6B in Electric Vehicle Production</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="siemens-wind-contract">Siemens Energy Secures Major Wind Power Contract</a>
+                                <a href="article.html?id=siemens-wind-contract" class="headline-link">Siemens Energy Secures Major Wind Power Contract</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="deutsche-bank-profitability">Deutsche Bank Reports Improved Profitability</a>
+                                <a href="article.html?id=deutsche-bank-profitability" class="headline-link">Deutsche Bank Reports Improved Profitability</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="bayer-pharma-pipeline">Bayer Advances in Pharmaceutical Pipeline Development</a>
+                                <a href="article.html?id=bayer-pharma-pipeline" class="headline-link">Bayer Advances in Pharmaceutical Pipeline Development</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="adidas-sustainability">Adidas Launches Sustainable Product Initiative</a>
+                                <a href="article.html?id=adidas-sustainability" class="headline-link">Adidas Launches Sustainable Product Initiative</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="bmw-digital-services">BMW Expands Digital Services Portfolio</a>
+                                <a href="article.html?id=bmw-digital-services" class="headline-link">BMW Expands Digital Services Portfolio</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="basf-circular-economy">BASF Invests in Circular Economy Solutions</a>
+                                <a href="article.html?id=basf-circular-economy" class="headline-link">BASF Invests in Circular Economy Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -951,28 +845,28 @@
                     <div class="country-window-content">
                         <div class="headlines-list">
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="lvmh-record-sales">LVMH Reports Record Sales in Luxury Goods Segment</a>
+                                <a href="article.html?id=lvmh-record-sales" class="headline-link">LVMH Reports Record Sales in Luxury Goods Segment</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="total-renewable-transition">Total Energies Accelerates Renewable Energy Transition</a>
+                                <a href="article.html?id=total-renewable-transition" class="headline-link">Total Energies Accelerates Renewable Energy Transition</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="airbus-aircraft-delivery">Airbus Delivers Record Number of Aircraft</a>
+                                <a href="article.html?id=airbus-aircraft-delivery" class="headline-link">Airbus Delivers Record Number of Aircraft</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="sanofi-mrna-vaccine">Sanofi Advances in mRNA Vaccine Technology</a>
+                                <a href="article.html?id=sanofi-mrna-vaccine" class="headline-link">Sanofi Advances in mRNA Vaccine Technology</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="loreal-ai-beauty">L'Oréal Launches AI-Powered Beauty Solutions</a>
+                                <a href="article.html?id=loreal-ai-beauty" class="headline-link">L'Oréal Launches AI-Powered Beauty Solutions</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="renault-ev-lineup">Renault Expands Electric Vehicle Lineup</a>
+                                <a href="article.html?id=renault-ev-lineup" class="headline-link">Renault Expands Electric Vehicle Lineup</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="schneider-energy-management">Schneider Electric Innovates in Energy Management</a>
+                                <a href="article.html?id=schneider-energy-management" class="headline-link">Schneider Electric Innovates in Energy Management</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="vivendi-restructure">Vivendi Restructures Media Portfolio</a>
+                                <a href="article.html?id=vivendi-restructure" class="headline-link">Vivendi Restructures Media Portfolio</a>
                             </div>
                         </div>
                     </div>
@@ -986,28 +880,28 @@
                     <div class="country-window-content">
                         <div class="headlines-list">
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="ferrari-hybrid-technology">Ferrari Unveils New Hybrid Supercar Technology</a>
+                                <a href="article.html?id=ferrari-hybrid-technology" class="headline-link">Ferrari Unveils New Hybrid Supercar Technology</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="eni-green-hydrogen">ENI Invests in Green Hydrogen Production</a>
+                                <a href="article.html?id=eni-green-hydrogen" class="headline-link">ENI Invests in Green Hydrogen Production</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="prada-asian-growth">Prada Group Reports Strong Asian Market Growth</a>
+                                <a href="article.html?id=prada-asian-growth" class="headline-link">Prada Group Reports Strong Asian Market Growth</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="telecom-italia-5g">Telecom Italia Advances 5G Network Deployment</a>
+                                <a href="article.html?id=telecom-italia-5g" class="headline-link">Telecom Italia Advances 5G Network Deployment</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="intesa-digital-banking">Intesa Sanpaolo Strengthens Digital Banking</a>
+                                <a href="article.html?id=intesa-digital-banking" class="headline-link">Intesa Sanpaolo Strengthens Digital Banking</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="stellantis-manufacturing">Stellantis Electrifies Italian Manufacturing</a>
+                                <a href="article.html?id=stellantis-manufacturing" class="headline-link">Stellantis Electrifies Italian Manufacturing</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="enel-renewable-innovation">Enel Leads Renewable Energy Innovation</a>
+                                <a href="article.html?id=enel-renewable-innovation" class="headline-link">Enel Leads Renewable Energy Innovation</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="generali-insurance-tech">Generali Expands Insurance Technology</a>
+                                <a href="article.html?id=generali-insurance-tech" class="headline-link">Generali Expands Insurance Technology</a>
                             </div>
                         </div>
                     </div>
@@ -1021,28 +915,28 @@
                     <div class="country-window-content">
                         <div class="headlines-list">
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="asml-chip-equipment">ASML Reports Strong Demand for Chip Equipment</a>
+                                <a href="article.html?id=asml-chip-equipment" class="headline-link">ASML Reports Strong Demand for Chip Equipment</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="shell-low-carbon">Shell Accelerates Low-Carbon Energy Investments</a>
+                                <a href="article.html?id=shell-low-carbon" class="headline-link">Shell Accelerates Low-Carbon Energy Investments</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="philips-health-tech">Philips Innovates in Health Technology</a>
+                                <a href="article.html?id=philips-health-tech" class="headline-link">Philips Innovates in Health Technology</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="ing-digital-payments">ING Bank Expands Digital Payment Solutions</a>
+                                <a href="article.html?id=ing-digital-payments" class="headline-link">ING Bank Expands Digital Payment Solutions</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="unilever-sustainable">Unilever Advances Sustainable Product Portfolio</a>
+                                <a href="article.html?id=unilever-sustainable" class="headline-link">Unilever Advances Sustainable Product Portfolio</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="heineken-innovation">Heineken Invests in Brewery Innovation</a>
+                                <a href="article.html?id=heineken-innovation" class="headline-link">Heineken Invests in Brewery Innovation</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="kpn-5g-network">KPN Enhances 5G Network Infrastructure</a>
+                                <a href="article.html?id=kpn-5g-network" class="headline-link">KPN Enhances 5G Network Infrastructure</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="dsm-nutrition">DSM Develops Nutritional Innovation</a>
+                                <a href="article.html?id=dsm-nutrition" class="headline-link">DSM Develops Nutritional Innovation</a>
                             </div>
                         </div>
                     </div>
@@ -1056,28 +950,63 @@
                     <div class="country-window-content">
                         <div class="headlines-list">
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="iberdrola-renewable-expansion">Iberdrola Leads Global Renewable Energy Expansion</a>
+                                <a href="article.html?id=iberdrola-renewable-expansion" class="headline-link">Iberdrola Leads Global Renewable Energy Expansion</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="santander-digital-services">Santander Bank Expands Digital Services</a>
+                                <a href="article.html?id=santander-digital-services" class="headline-link">Santander Bank Expands Digital Services</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="inditex-international-growth">Inditex Reports Strong International Growth</a>
+                                <a href="article.html?id=inditex-international-growth" class="headline-link">Inditex Reports Strong International Growth</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="telefonica-5g-deployment">Telefónica Advances 5G Technology Deployment</a>
+                                <a href="article.html?id=telefonica-5g-deployment" class="headline-link">Telefónica Advances 5G Technology Deployment</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="repsol-hydrogen-tech">Repsol Invests in Hydrogen Technology</a>
+                                <a href="article.html?id=repsol-hydrogen-tech" class="headline-link">Repsol Invests in Hydrogen Technology</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="bbva-sustainable-finance">BBVA Enhances Sustainable Finance Offerings</a>
+                                <a href="article.html?id=bbva-sustainable-finance" class="headline-link">BBVA Enhances Sustainable Finance Offerings</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="amadeus-travel-tech">Amadeus Innovates Travel Technology Solutions</a>
+                                <a href="article.html?id=amadeus-travel-tech" class="headline-link">Amadeus Innovates Travel Technology Solutions</a>
                             </div>
                             <div class="headline-item">
-                                <a href="#" class="headline-link" data-article="grifols-plasma-therapies">Grifols Advances in Plasma-Based Therapies</a>
+                                <a href="article.html?id=grifols-plasma-therapies" class="headline-link">Grifols Advances in Plasma-Based Therapies</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="country-window" id="central-eastern-europe">
+                    <div class="country-window-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                        <span class="flag">🏛️</span>
+                        <h2 class="country-window-title">Central & Eastern Europe</h2>
+                    </div>
+                    <div class="country-window-content">
+                        <div class="headlines-list">
+                            <div class="headline-item">
+                                <a href="article.html?id=cee-markets-outlook" class="headline-link">CEE Markets Show Strong Growth Potential</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=polish-banking-sector" class="headline-link">🇵🇱 Polish Banking Sector Records Strong Q3 Performance</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=czech-manufacturing" class="headline-link">🇨🇿 Czech Manufacturing Index Reaches Five-Year High</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=hungarian-automotive" class="headline-link">🇭🇺 Hungary Attracts Major Automotive Investment</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=romanian-energy" class="headline-link">🇷🇴 Romania Accelerates Renewable Energy Projects</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=slovenian-tech" class="headline-link">🇸🇮 Slovenia Emerges as Regional Tech Hub</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=slovak-manufacturing" class="headline-link">🇸🇰 Slovakia Expands Manufacturing Capacity</a>
+                            </div>
+                            <div class="headline-item">
+                                <a href="article.html?id=estonian-fintech" class="headline-link">🇪🇪 Estonia Leads Regional Fintech Innovation</a>
                             </div>
                         </div>
                     </div>
@@ -1092,298 +1021,6 @@
     </button>
 
     <script>
-        // Article data for full text display
-        const articles = {
-            'sap-q3-results': {
-                title: 'SAP Announces Strong Q3 Results with Cloud Revenue Growth',
-                source: 'Financial Times',
-                date: '2 hours ago',
-                fullText: `German software giant SAP reported better-than-expected third quarter results, driven by strong cloud subscription growth and digital transformation initiatives across global markets.
-                
-                The company's cloud revenues increased by 24% year-over-year, reaching €3.1 billion, while total revenue grew 9% to €7.74 billion. Chief Executive Christian Klein highlighted the strong momentum in enterprise resource planning (ERP) solutions and artificial intelligence capabilities.
-                
-                "Our cloud transformation continues to accelerate, with customers increasingly adopting our comprehensive business technology platform," Klein stated during the quarterly earnings call. The company raised its full-year guidance, projecting cloud revenue growth of 23-26%.
-                
-                SAP's RISE with SAP program, which helps customers migrate to the cloud, signed 850 new deals in the quarter, demonstrating robust demand for digital transformation services. The company's operating profit margin improved to 23.1%, exceeding analyst expectations.
-                
-                Looking ahead, SAP expects continued strength in its core markets, particularly in manufacturing, retail, and financial services sectors. The company is investing heavily in AI and machine learning capabilities to enhance its cloud offerings and maintain competitive advantage in the enterprise software market.`
-            },
-            'volkswagen-ev-investment': {
-                title: 'Volkswagen Invests €2.6B in Electric Vehicle Production',
-                source: 'Reuters',
-                date: '4 hours ago',
-                fullText: `Volkswagen Group announced a major €2.6 billion investment in electric vehicle infrastructure across its German manufacturing facilities, marking the latest step in the automaker's ambitious transition to electric mobility.
-                
-                The investment will fund the construction of new battery production lines, charging infrastructure, and the conversion of existing assembly plants to accommodate electric vehicle manufacturing. The Wolfsburg-based company plans to produce 1.5 million electric vehicles annually by 2025.
-                
-                "This investment represents our commitment to making Germany the heart of our electric vehicle production," said CEO Herbert Diess. The funding will be distributed across facilities in Wolfsburg, Hanover, and Dresden, creating approximately 2,500 new jobs.
-                
-                The announcement comes as European automakers face increasing pressure to meet stringent emissions regulations and compete with Tesla and Chinese electric vehicle manufacturers. Volkswagen's ID series has gained traction in European markets, with the ID.4 becoming one of the best-selling electric SUVs.
-                
-                The company also revealed plans to establish partnerships with battery suppliers and expand its charging network across Europe. These initiatives are part of Volkswagen's broader strategy to achieve carbon neutrality by 2050 and maintain its position as Europe's largest automaker in the electric vehicle era.`
-            },
-            'siemens-wind-contract': {
-                title: 'Siemens Energy Secures Major Wind Power Contract',
-                source: 'Bloomberg',
-                date: '6 hours ago',
-                fullText: `Siemens Energy has secured a significant offshore wind project contract worth over €1.2 billion, reinforcing its position as a leader in the renewable energy sector with innovative turbine technology and comprehensive project services.
-                
-                The contract involves the supply and installation of 87 wind turbines for the North Sea wind farm, which will generate enough clean energy to power 900,000 homes. The project represents one of the largest offshore wind installations in European waters.
-                
-                "This contract demonstrates our technological leadership in offshore wind and our ability to deliver large-scale renewable energy projects," commented CEO Christian Bruch. The turbines will feature the latest SG 14-236 DD model, offering enhanced efficiency and reduced maintenance requirements.
-                
-                Siemens Energy's wind power division has experienced robust growth, with order intake increasing 47% year-over-year. The company is benefiting from accelerating global demand for renewable energy and supportive government policies promoting clean energy transition.
-                
-                The project is expected to be completed by 2026, with installation beginning in late 2024. Siemens Energy will also provide long-term service and maintenance support, ensuring optimal performance throughout the wind farm's operational lifetime. The contract strengthens the company's order backlog and provides visibility for future revenue growth.`
-            },
-            'lvmh-record-sales': {
-                title: 'LVMH Reports Record Sales in Luxury Goods Segment',
-                source: 'Financial Times', 
-                date: '3 hours ago',
-                fullText: `LVMH Moët Hennessy Louis Vuitton achieved unprecedented sales figures in its luxury goods segment, driven by exceptional demand in Asia and a strong recovery in European markets following pandemic-related disruptions.
-                
-                The French luxury conglomerate reported revenue of €19.8 billion in the third quarter, representing a 19% increase compared to the same period last year. The fashion and leather goods division, anchored by Louis Vuitton and Christian Dior, contributed €7.9 billion in sales.
-                
-                Chairman and CEO Bernard Arnault attributed the strong performance to "exceptional desirability of our brands and the craftsmanship excellence that defines our maisons." Asian markets, particularly China and Japan, showed remarkable resilience with growth exceeding 25%.
-                
-                The company's selective retailing division, including Sephora and DFS, also demonstrated strong momentum with revenue growth of 22%. LVMH's wine and spirits portfolio benefited from premium positioning and growing demand for high-end cognac and champagne.
-                
-                Looking forward, LVMH remains confident about continued growth prospects, despite global economic uncertainties. The company is expanding its retail footprint in key markets and investing in digital capabilities to enhance customer experience across all touchpoints.`
-            }
-            // Add more articles as needed...
-        };
-
-        // Modal functionality for full text display
-        function createModal() {
-            const modal = document.createElement('div');
-            modal.id = 'article-modal';
-            modal.innerHTML = `
-                <div class="modal-overlay">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h2 class="modal-title"></h2>
-                            <button class="modal-close">&times;</button>
-                        </div>
-                        <div class="modal-meta">
-                            <span class="modal-source"></span>
-                            <span class="modal-date"></span>
-                        </div>
-                        <div class="modal-body">
-                            <p class="modal-text"></p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            // Add modal styles
-            const style = document.createElement('style');
-            style.textContent = `
-                #article-modal {
-                    display: none;
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 10000;
-                }
-                
-                .modal-overlay {
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, 0.8);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 2rem;
-                }
-                
-                .modal-content {
-                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
-                    backdrop-filter: blur(10px);
-                    border-radius: 20px;
-                    max-width: 800px;
-                    width: 100%;
-                    max-height: 90vh;
-                    overflow-y: auto;
-                    box-shadow: var(--shadow-2xl);
-                }
-                
-                .modal-header {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    padding: 2rem 2rem 1rem;
-                    border-bottom: 1px solid var(--gray-200);
-                }
-                
-                .modal-title {
-                    font-size: 1.5rem;
-                    font-weight: 700;
-                    color: var(--gray-900);
-                    margin: 0;
-                    line-height: 1.3;
-                    flex: 1;
-                    margin-right: 1rem;
-                }
-                
-                .modal-close {
-                    background: none;
-                    border: none;
-                    font-size: 2rem;
-                    color: var(--gray-500);
-                    cursor: pointer;
-                    padding: 0;
-                    width: 32px;
-                    height: 32px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    transition: var(--transition-quick);
-                }
-                
-                .modal-close:hover {
-                    background: var(--gray-100);
-                    color: var(--gray-700);
-                }
-                
-                .modal-meta {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 1rem 2rem;
-                    font-size: 0.875rem;
-                    color: var(--gray-600);
-                }
-                
-                .modal-source {
-                    font-weight: 500;
-                    color: var(--primary-600);
-                    background: var(--primary-50);
-                    padding: 0.25rem 0.5rem;
-                    border-radius: 6px;
-                    font-size: 0.75rem;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
-                }
-                
-                .modal-body {
-                    padding: 1rem 2rem 2rem;
-                }
-                
-                .modal-text {
-                    color: var(--gray-700);
-                    line-height: 1.7;
-                    font-size: 1rem;
-                    white-space: pre-line;
-                    margin: 0;
-                }
-                
-                @media (max-width: 768px) {
-                    .modal-overlay {
-                        padding: 1rem;
-                    }
-                    
-                    .modal-header {
-                        padding: 1.5rem 1.5rem 1rem;
-                    }
-                    
-                    .modal-title {
-                        font-size: 1.25rem;
-                    }
-                    
-                    .modal-meta,
-                    .modal-body {
-                        padding-left: 1.5rem;
-                        padding-right: 1.5rem;
-                    }
-                }
-                
-                @media (prefers-color-scheme: dark) {
-                    .modal-content {
-                        background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.9) 100%);
-                    }
-                    
-                    .modal-header {
-                        border-bottom-color: var(--gray-700);
-                    }
-                    
-                    .modal-title {
-                        color: var(--gray-50);
-                    }
-                    
-                    .modal-close {
-                        color: var(--gray-400);
-                    }
-                    
-                    .modal-close:hover {
-                        background: var(--gray-700);
-                        color: var(--gray-200);
-                    }
-                    
-                    .modal-source {
-                        color: var(--primary-400);
-                        background: rgba(59, 130, 246, 0.1);
-                    }
-                    
-                    .modal-text {
-                        color: var(--gray-300);
-                    }
-                }
-            `;
-            
-            document.head.appendChild(style);
-            document.body.appendChild(modal);
-            
-            // Close modal functionality
-            const closeBtn = modal.querySelector('.modal-close');
-            const overlay = modal.querySelector('.modal-overlay');
-            
-            closeBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-            
-            overlay.addEventListener('click', (e) => {
-                if (e.target === overlay) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Close on escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            return modal;
-        }
-
-        // Initialize modal
-        const modal = createModal();
-
-        // Show article in modal
-        function showArticle(articleId) {
-            const article = articles[articleId];
-            if (!article) {
-                console.log('Article not found:', articleId);
-                return;
-            }
-            
-            const modalTitle = modal.querySelector('.modal-title');
-            const modalSource = modal.querySelector('.modal-source');
-            const modalDate = modal.querySelector('.modal-date');
-            const modalText = modal.querySelector('.modal-text');
-            
-            modalTitle.textContent = article.title;
-            modalSource.textContent = article.source;
-            modalDate.textContent = article.date;
-            modalText.textContent = article.fullText;
-            
-            modal.style.display = 'block';
-        }
-
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1418,27 +1055,19 @@
             });
         });
 
-        // Add click tracking for news headlines - now opens full article
-        document.querySelectorAll('.headline-link, .featured-headline').forEach(headline => {
-            headline.addEventListener('click', function(e) {
-                e.preventDefault();
-                const articleId = this.getAttribute('data-article');
-                if (articleId) {
-                    showArticle(articleId);
-                } else {
-                    console.log('News headline clicked:', this.textContent);
-                }
-            });
-        });
-
-        // Update featured headlines to have data-article attributes
+        // Add entrance animations on load
         document.addEventListener('DOMContentLoaded', function() {
-            const featuredHeadlines = document.querySelectorAll('.featured-headline');
-            if (featuredHeadlines.length > 0) {
-                featuredHeadlines[0].setAttribute('data-article', 'sap-q3-results');
-                featuredHeadlines[1].setAttribute('data-article', 'volkswagen-ev-investment'); 
-                featuredHeadlines[2].setAttribute('data-article', 'siemens-wind-contract');
-            }
+            // Add staggered animations to country buttons
+            const countryButtons = document.querySelectorAll('.country-button');
+            countryButtons.forEach((button, index) => {
+                button.style.animationDelay = `${(index + 1) * 0.1}s`;
+            });
+
+            // Add staggered animations to sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${0.6 + (index * 0.2)}s`;
+            });
         });
     </script>
 </body>
